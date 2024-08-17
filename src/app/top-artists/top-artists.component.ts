@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router'; // Importer RouterModule
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import { SpotifyService } from '../spotify.service';
 import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-top-artists',
   standalone: true,
-  imports: [CommonModule, RouterModule],  // Ajouter RouterModule ici
+  imports: [CommonModule],
   templateUrl: './top-artists.component.html',
   styleUrls: ['./top-artists.component.css']
 })
@@ -16,15 +16,27 @@ export class TopArtistsComponent implements OnInit {
   topArtists: any[] = [];
   timeRange: string = 'long_term'; // Par défaut, "All Time"
 
-  constructor(private spotifyService: SpotifyService, private authService: AuthService) { }
+  constructor(
+    private spotifyService: SpotifyService,
+    private authService: AuthService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
-    this.loadTopArtists();
+    // Écoute des changements de paramètres de l'URL
+    this.route.queryParams.subscribe((params: Params) => {
+      this.timeRange = params['timeRange'] || 'long_term'; // Défaut à 'long_term' si non spécifié
+      this.loadTopArtists();
+    });
   }
 
   setTimeRange(range: string) {
-    this.timeRange = range;
-    this.loadTopArtists();
+    this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams: { timeRange: range },
+      queryParamsHandling: 'merge', // garde les autres paramètres
+    });
   }
 
   loadTopArtists(): void {

@@ -1,14 +1,59 @@
 nav {
     margin-bottom: 20px;
-  }
-  
-  nav a {
+}
+
+nav a {
     margin-right: 15px;
     text-decoration: none;
     color: #007bff;
-  }
-  
-  nav a.active {
+}
+
+nav a.active {
     font-weight: bold;
     text-decoration: underline;
+}
+
+
+:root {
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --button-background: #007bff;
+    --button-text-color: #ffffff;
+    --button-hover-background: #0056b3;
+    --button-text-color-hover: #ffffff;
+  }
+  
+  body.dark-theme {
+    --background-color: #121212;
+    --text-color: #ffffff;
+    --button-background: #6200ee;
+    --button-text-color: #ffffff;
+    --button-hover-background: #3700b3;
+    --button-text-color-hover: #ffffff;
+  }
+  
+  body.light-theme {
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --button-background: #007bff;
+    --button-text-color: #ffffff;
+    --button-hover-background: #0056b3; /* Ajout du style pour le hover en light mode */
+  }
+  
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  button {
+    background-color: var(--button-background);
+    color: var(--button-text-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: var(--button-hover-background); /* Utilisation de la variable pour le hover */
   }

@@ -1,24 +1,19 @@
-<nav>
-    <a routerLink="/top-tracks" routerLinkActive="active">Top Tracks</a>
-    <a routerLink="/top-artists" routerLinkActive="active">Top Artists</a>
-  </nav>
-  
-  <div class="tab-container">
+<div class="tab-container">
     <button (click)="setTimeRange('long_term')" [class.active]="timeRange === 'long_term'">All Time</button>
     <button (click)="setTimeRange('medium_term')" [class.active]="timeRange === 'medium_term'">Last 6 Months</button>
     <button (click)="setTimeRange('short_term')" [class.active]="timeRange === 'short_term'">Last Month</button>
-    <button (click)="logout()" class="logout-button">Disconnect</button> <!-- Bouton de déconnexion -->
-  </div>
-  
-  <div class="top-tracks-container">
+    <button (click)="logout()" class="logout-button">Disconnect</button>
+</div>
+
+<div class="top-tracks-container">
     <h1>Top Tracks ({{ getTimeRangeLabel() }})</h1>
     <div *ngFor="let track of topTracks; let i = index" class="track-item">
-      <span class="track-number">{{ i + 1 }}</span>
-      <img [src]="track.album.images[0]?.url" alt="{{ track.name }}" class="album-cover"/>
-      <div class="track-info">
-        <h2>{{ track.name }}</h2>
-        <p>{{ track.artists[0]?.name }}</p>
-        <p>Album: {{ track.album.name }}</p>
-      </div>
+        <span class="track-number">{{ i + 1 }}</span>
+        <img [src]="track.album.images[0]?.url" alt="{{ track.name }}" class="album-cover" />
+        <div class="track-info">
+            <h2>{{ track.name }}</h2>
+            <p>{{ formatArtists(track.artists) }}</p>
+            <p>Album: {{ track.album.name }}</p>
+        </div>
     </div>
-  </div>
+</div>
