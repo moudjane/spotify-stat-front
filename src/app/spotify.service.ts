@@ -11,13 +11,17 @@ export class SpotifyService {
 
   constructor(private http: HttpClient, private authService: AuthService) {}
 
-  getTopTracks(): Observable<any> {
+  getTopTracks(timeRange: string = 'long_term'): Observable<any> {
     const token = this.authService.getToken();
-    console.log('Using token for API request:', token);
     const headers = new HttpHeaders({
       Authorization: `Bearer ${token}`
     });
 
-    return this.http.get<any>(this.apiUrl, { headers });
+    const params = {
+      time_range: timeRange,
+      limit: '50'  // Limite le nombre de pistes récupérées, par exemple à 50
+    };
+
+    return this.http.get<any>(this.apiUrl, { headers, params });
   }
 }

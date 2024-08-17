@@ -1,0 +1,70 @@
+.tab-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Aligner verticalement le bouton de déconnexion avec les autres boutons */
+    margin-bottom: 20px;
+  }
+  
+  .tab-container button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    border: none;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+  }
+  
+  .tab-container button.active {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .logout-button {
+    background-color: #dc3545 !important; /* Rouge pour indiquer la déconnexion */
+    color: white;
+  }
+  
+  .logout-button:hover {
+    background-color: #c82333;
+  }
+  
+  .top-tracks-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .track-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+    width: 80%;
+  }
+  
+  .track-number {
+    font-size: 24px;
+    margin-right: 20px;
+    font-weight: bold;
+  }
+  
+  .album-cover {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+  }
+  
+  .track-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .track-info h2 {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  .track-info p {
+    margin: 5px 0;
+  }
