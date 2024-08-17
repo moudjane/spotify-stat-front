@@ -7,8 +7,8 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class AuthService {
   private authTokenKey = 'auth_token';
-  private clientId = 'a42db6a5835c4061a8deb0a847c91ec6'; // Remplace par ton client ID Spotify
-  private redirectUri = 'http://localhost:4200/callback'; // URL de redirection après la connexion
+  private clientId = 'a42db6a5835c4061a8deb0a847c91ec6';
+  private redirectUri = 'http://localhost:4200/callback';
   private scope = 'user-read-private user-top-read';
   private authEndpoint = 'https://accounts.spotify.com/authorize';
 
@@ -23,7 +23,7 @@ export class AuthService {
       response_type: 'token',
       redirect_uri: this.redirectUri,
       scope: this.scope,
-      show_dialog: 'true' // Ajoute ce paramètre pour forcer la ré-authentification
+      show_dialog: 'true'
     });
   
     window.location.href = `${this.authEndpoint}?${params.toString()}`;
@@ -73,14 +73,13 @@ export class AuthService {
     return this.authStatus;
   }
 
-  // Méthode de déconnexion
   logout(): void {
     localStorage.removeItem(this.authTokenKey);
-    localStorage.clear();
+  
     sessionStorage.clear();
     
     this.authStatus.next(false);
-  
+    
     this.router.navigate(['/login']).then(() => {
       window.location.reload();
     });
