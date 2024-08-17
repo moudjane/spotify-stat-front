@@ -1,12 +1,11 @@
 <div class="header">
-    <!-- Affiche uniquement les onglets si ce n'est pas la page de connexion -->
-    <div *ngIf="!isLoginPage" class="tabs-container">
-      <a routerLink="/top-tracks" routerLinkActive="active-tab" class="tab">Top Tracks</a>
-      <a routerLink="/top-artists" routerLinkActive="active-tab" class="tab">Top Artists</a>
-    </div>
-    <div class="theme-toggle-container">
-      <button (click)="toggleTheme()">Toggle Theme</button>
-    </div>
+  <div *ngIf="!isLoginPage" class="tabs-container">
+    <a routerLink="/top-tracks" routerLinkActive="active-tab" class="tab">Top Tracks</a>
+    <a routerLink="/top-artists" routerLinkActive="active-tab" class="tab">Top Artists</a>
   </div>
-  
-  <router-outlet></router-outlet>
+  <div class="theme-toggle-container">
+    <button (click)="toggleTheme()">Toggle Theme</button>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

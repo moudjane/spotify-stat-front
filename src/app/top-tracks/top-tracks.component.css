@@ -1,86 +1,86 @@
 .tab-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .tab-container button {
-    padding: 10px 20px;
-    margin: 0 5px;
-    cursor: pointer;
-    border: none;
-    background-color: var(--button-background);
-    color: var(--button-text-color);
-    border-radius: 5px;
-    transition: background-color 0.3s ease; /* Ajoute une transition douce pour le hover */
-  }
-  
-  .tab-container button.active {
-    background-color: var(--button-hover-background); /* Style pour le bouton actif */
-    color: var(--button-text-color);
-  }
-  
-  .tab-container button:hover {
-    background-color: var(--button-hover-background); /* Utilise la variable de hover */
-  }
-  
-  .logout-button {
-    background-color: #dc3545 !important; /* Rouge pour indiquer la déconnexion */
-    color: white;
-  }
-  
-  .logout-button:hover {
-    background-color: #c82333 !important;
-  }
-  
-  .top-tracks-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .track-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 20px;
-    width: 80%;
-  }
-  
-  .track-number {
-    font-size: 24px;
-    margin-right: 20px;
-    font-weight: bold;
-  }
-  
-  .album-cover {
-    width: 100px;
-    height: 100px;
-    margin-right: 20px;
-  }
-  
-  .track-info {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .track-info h2 {
-    margin: 0;
-    font-size: 18px;
-  }
-  
-  .track-info p {
-    margin: 5px 0;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
 
-  .top-tracks-container {
-    background-color: var(--background-color);
-    color: var(--text-color);
-  }
-  
-  button {
-    background-color: var(--button-background);
-    color: var(--button-text-color);
-  }
+.tab-container button {
+  padding: 10px 20px;
+  margin: 0 5px;
+  cursor: pointer;
+  border: none;
+  background-color: var(--button-background);
+  color: var(--button-text-color);
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.tab-container button.active {
+  background-color: var(--button-hover-background);
+  color: var(--button-text-color);
+}
+
+.tab-container button:hover {
+  background-color: var(--button-hover-background);
+}
+
+.logout-button {
+  background-color: #dc3545 !important;
+  color: white;
+}
+
+.logout-button:hover {
+  background-color: #c82333 !important;
+}
+
+.top-tracks-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.track-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+  width: 80%;
+}
+
+.track-number {
+  font-size: 24px;
+  margin-right: 20px;
+  font-weight: bold;
+}
+
+.album-cover {
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+}
+
+.track-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.track-info h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.track-info p {
+  margin: 5px 0;
+}
+
+.top-tracks-container {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+button {
+  background-color: var(--button-background);
+  color: var(--button-text-color);
+}

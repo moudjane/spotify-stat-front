@@ -14,7 +14,7 @@ import { AuthService } from '../auth.service';
 export class TopArtistsComponent implements OnInit {
 
   topArtists: any[] = [];
-  timeRange: string = 'long_term'; // Par défaut, "All Time"
+  timeRange: string = 'long_term';
 
   constructor(
     private spotifyService: SpotifyService,
@@ -24,9 +24,8 @@ export class TopArtistsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // Écoute des changements de paramètres de l'URL
     this.route.queryParams.subscribe((params: Params) => {
-      this.timeRange = params['timeRange'] || 'long_term'; // Défaut à 'long_term' si non spécifié
+      this.timeRange = params['timeRange'] || 'long_term';
       this.loadTopArtists();
     });
   }
@@ -35,7 +34,7 @@ export class TopArtistsComponent implements OnInit {
     this.router.navigate([], {
       relativeTo: this.route,
       queryParams: { timeRange: range },
-      queryParamsHandling: 'merge', // garde les autres paramètres
+      queryParamsHandling: 'merge',
     });
   }
 

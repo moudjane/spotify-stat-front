@@ -14,9 +14,8 @@ export class AuthService {
 
   private authStatus = new BehaviorSubject<boolean>(this.hasToken());
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
-  // La méthode login qui redirige l'utilisateur vers Spotify pour l'authentification
   login() {
     const params = new URLSearchParams({
       client_id: this.clientId,
@@ -25,19 +24,18 @@ export class AuthService {
       scope: this.scope,
       show_dialog: 'true'
     });
-  
+
     window.location.href = `${this.authEndpoint}?${params.toString()}`;
   }
 
-  // La méthode handleAuthCallback qui gère le retour après authentification
   handleAuthCallback() {
     const hash = window.location.hash;
     console.log('Hash from URL:', hash);
-  
+
     if (hash) {
       const token = new URLSearchParams(hash.substring(1)).get('access_token');
       console.log('Extracted token:', token);
-  
+
       if (token) {
         this.storeToken(token);
         this.authStatus.next(true);
@@ -53,39 +51,34 @@ export class AuthService {
     }
   }
 
-  // Vérifie si un token est stocké
   private hasToken(): boolean {
     return !!this.getToken();
   }
 
-  // Stocke le token dans le localStorage
   private storeToken(token: string) {
     localStorage.setItem(this.authTokenKey, token);
   }
 
-  // Récupère le token stocké
   getToken(): string | null {
     return localStorage.getItem(this.authTokenKey);
   }
 
-  // Observable pour vérifier l'état de connexion
   isLoggedIn(): BehaviorSubject<boolean> {
     return this.authStatus;
   }
 
   logout(): void {
     localStorage.removeItem(this.authTokenKey);
-  
+
     sessionStorage.clear();
-    
+
     this.authStatus.next(false);
-    
+
     this.router.navigate(['/login']).then(() => {
       window.location.reload();
     });
   }
 
-  // Guard pour protéger les routes
   canActivate(): boolean {
     if (this.hasToken()) {
       return true;

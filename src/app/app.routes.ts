@@ -9,6 +9,6 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'callback', component: CallbackComponent },
   { path: 'top-tracks', component: TopTracksComponent, canActivate: [AuthService] },
-  { path: 'top-artists', component: TopArtistsComponent, canActivate: [AuthService] },  // Nouvelle route pour Top Artists
+  { path: 'top-artists', component: TopArtistsComponent, canActivate: [AuthService] },
   { path: '', redirectTo: '/login', pathMatch: 'full' }
 ];

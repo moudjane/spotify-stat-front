@@ -26,9 +26,9 @@ import { AuthService } from '../auth.service';
 })
 export class LoginComponent {
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService) { }
 
   login() {
-    this.authService.login(); // Appel à la méthode de connexion manuelle
+    this.authService.login();
   }
 }

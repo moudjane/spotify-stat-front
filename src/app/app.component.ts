@@ -16,7 +16,6 @@ export class AppComponent {
   isLoginPage: boolean = false;
 
   constructor(private router: Router, private themeService: ThemeService) {
-    // Écoute les changements de route pour déterminer si on est sur la page de login
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event: NavigationEnd) => {
@@ -25,16 +24,15 @@ export class AppComponent {
   }
 
   toggleTheme(): void {
-    this.themeService.toggleTheme(); // Utilise le ThemeService pour changer le thème
+    this.themeService.toggleTheme();
   }
 
   ngOnInit() {
-    // Appliquer le thème sauvegardé au démarrage de l'application
     const savedTheme = this.themeService.getTheme();
     if (savedTheme) {
       this.themeService.applyTheme(savedTheme);
     } else {
-      this.themeService.applyTheme('light'); // Applique le thème clair par défaut
+      this.themeService.applyTheme('light');
     }
   }
 }

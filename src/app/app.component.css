@@ -1,59 +1,59 @@
 .header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    padding: 10px 20px;
-  }
-  
-  .tabs-container {
-    display: flex;
-    justify-content: center;
-    flex-grow: 1;
-  }
-  
-  .tab {
-    padding: 15px 30px;
-    margin: 0 10px;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    background-color: var(--button-background);
-    color: var(--button-text-color);
-    border-radius: 10px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    cursor: pointer;
-  }
-  
-  .tab:hover {
-    background-color: var(--button-hover-background);
-    color: var(--button-text-color-hover);
-  }
-  
-  .active-tab {
-    background-color: var(--button-hover-background);
-    color: var(--button-text-color);
-  }
-  
-  .theme-toggle-container {
-    position: absolute;
-    right: 30px; /* Ajouter de la marge à droite */
-    top: 20px;   /* Ajouter de la marge en haut */
-  }
-  
-  .theme-toggle-container button {
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    background-color: var(--button-background);
-    color: var(--button-text-color);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .theme-toggle-container button:hover {
-    background-color: var(--button-hover-background);
-    color: var(--button-text-color-hover);
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 10px 20px;
+}
+
+.tabs-container {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.tab {
+  padding: 15px 30px;
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: var(--button-background);
+  color: var(--button-text-color);
+  border-radius: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.tab:hover {
+  background-color: var(--button-hover-background);
+  color: var(--button-text-color-hover);
+}
+
+.active-tab {
+  background-color: var(--button-hover-background);
+  color: var(--button-text-color);
+}
+
+.theme-toggle-container {
+  position: absolute;
+  right: 30px;
+  top: 20px;
+}
+
+.theme-toggle-container button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: var(--button-background);
+  color: var(--button-text-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle-container button:hover {
+  background-color: var(--button-hover-background);
+  color: var(--button-text-color-hover);
+}

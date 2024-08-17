@@ -23,7 +23,6 @@
 
 .tab-container button:hover {
     background-color: var(--button-hover-background);
-    /* Utilise la variable de hover */
 }
 
 .logout-button {
