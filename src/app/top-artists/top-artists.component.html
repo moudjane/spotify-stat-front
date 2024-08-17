@@ -7,18 +7,18 @@
     <button (click)="setTimeRange('long_term')" [class.active]="timeRange === 'long_term'">All Time</button>
     <button (click)="setTimeRange('medium_term')" [class.active]="timeRange === 'medium_term'">Last 6 Months</button>
     <button (click)="setTimeRange('short_term')" [class.active]="timeRange === 'short_term'">Last Month</button>
-    <button (click)="logout()" class="logout-button">Disconnect</button> <!-- Bouton de déconnexion -->
+    <button (click)="logout()" class="logout-button">Disconnect</button>
   </div>
   
-  <div class="top-tracks-container">
-    <h1>Top Tracks ({{ getTimeRangeLabel() }})</h1>
-    <div *ngFor="let track of topTracks; let i = index" class="track-item">
-      <span class="track-number">{{ i + 1 }}</span>
-      <img [src]="track.album.images[0]?.url" alt="{{ track.name }}" class="album-cover"/>
-      <div class="track-info">
-        <h2>{{ track.name }}</h2>
-        <p>{{ track.artists[0]?.name }}</p>
-        <p>Album: {{ track.album.name }}</p>
+  <div class="top-artists-container">
+    <h1>Top Artists ({{ getTimeRangeLabel() }})</h1>
+    <div *ngFor="let artist of topArtists; let i = index" class="artist-item">
+      <span class="artist-number">{{ i + 1 }}</span>
+      <img [src]="artist.images[0]?.url" alt="{{ artist.name }}" class="artist-cover"/>
+      <div class="artist-info">
+        <h2>{{ artist.name }}</h2>
+        <p>Followers: {{ artist.followers.total }}</p>
+        <p>Genres: {{ artist.genres.join(', ') }}</p>
       </div>
     </div>
   </div>

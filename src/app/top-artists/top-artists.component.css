@@ -1,7 +1,7 @@
 .tab-container {
     display: flex;
     justify-content: center;
-    align-items: center; /* Aligner verticalement le bouton de déconnexion avec les autres boutons */
+    align-items: center;
     margin-bottom: 20px;
   }
   
@@ -20,7 +20,7 @@
   }
   
   .logout-button {
-    background-color: #dc3545 !important; /* Rouge pour indiquer la déconnexion */
+    background-color: #dc3545 !important;
     color: white;
   }
   
@@ -28,13 +28,13 @@
     background-color: #c82333 !important;
   }
   
-  .top-tracks-container {
+  .top-artists-container {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   
-  .track-item {
+  .artist-item {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
@@ -43,28 +43,28 @@
     width: 80%;
   }
   
-  .track-number {
+  .artist-number {
     font-size: 24px;
     margin-right: 20px;
     font-weight: bold;
   }
   
-  .album-cover {
+  .artist-cover {
     width: 100px;
     height: 100px;
     margin-right: 20px;
   }
   
-  .track-info {
+  .artist-info {
     display: flex;
     flex-direction: column;
   }
   
-  .track-info h2 {
+  .artist-info h2 {
     margin: 0;
     font-size: 18px;
   }
   
-  .track-info p {
+  .artist-info p {
     margin: 5px 0;
   }

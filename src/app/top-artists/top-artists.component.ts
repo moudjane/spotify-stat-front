@@ -5,35 +5,35 @@ import { SpotifyService } from '../spotify.service';
 import { AuthService } from '../auth.service';
 
 @Component({
-  selector: 'app-top-tracks',
+  selector: 'app-top-artists',
   standalone: true,
   imports: [CommonModule, RouterModule],  // Ajouter RouterModule ici
-  templateUrl: './top-tracks.component.html',
-  styleUrls: ['./top-tracks.component.css']
+  templateUrl: './top-artists.component.html',
+  styleUrls: ['./top-artists.component.css']
 })
-export class TopTracksComponent implements OnInit {
+export class TopArtistsComponent implements OnInit {
 
-  topTracks: any[] = [];
+  topArtists: any[] = [];
   timeRange: string = 'long_term'; // Par défaut, "All Time"
 
   constructor(private spotifyService: SpotifyService, private authService: AuthService) { }
 
   ngOnInit(): void {
-    this.loadTopTracks();
+    this.loadTopArtists();
   }
 
   setTimeRange(range: string) {
     this.timeRange = range;
-    this.loadTopTracks();
+    this.loadTopArtists();
   }
 
-  loadTopTracks(): void {
-    this.spotifyService.getTopTracks(this.timeRange).subscribe(
+  loadTopArtists(): void {
+    this.spotifyService.getTopArtists(this.timeRange).subscribe(
       data => {
-        this.topTracks = data.items;
-        console.log('Top tracks loaded:', this.topTracks);
+        this.topArtists = data.items;
+        console.log('Top artists loaded:', this.topArtists);
       },
-      error => console.error('Error fetching top tracks', error)
+      error => console.error('Error fetching top artists', error)
     );
   }
 
