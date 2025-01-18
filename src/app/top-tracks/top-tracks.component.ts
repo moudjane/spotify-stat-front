@@ -5,11 +5,10 @@ import { SpotifyService } from '../spotify.service';
 import { AuthService } from '../auth.service';
 
 @Component({
-  selector: 'app-top-tracks',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './top-tracks.component.html',
-  styleUrls: ['./top-tracks.component.css']
+    selector: 'app-top-tracks',
+    imports: [CommonModule],
+    templateUrl: './top-tracks.component.html',
+    styleUrls: ['./top-tracks.component.css']
 })
 export class TopTracksComponent implements OnInit {
 

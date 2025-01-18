@@ -5,11 +5,10 @@ import { filter } from 'rxjs/operators';
 import { ThemeService } from './theme.service'; // Importer ThemeService
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  standalone: true,
-  imports: [CommonModule, RouterModule]
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css'],
+    imports: [CommonModule, RouterModule]
 })
 export class AppComponent {
   title = 'spotify-stat-front';
