@@ -8,7 +8,7 @@ import { BehaviorSubject } from 'rxjs';
 export class AuthService {
   private authTokenKey = 'auth_token';
   private clientId = 'a42db6a5835c4061a8deb0a847c91ec6';
-  private redirectUri = 'http://localhost:4200/callback';
+  private redirectUri = 'http://109.199.107.52/callback';
   private scope = 'user-read-private user-top-read';
   private authEndpoint = 'https://accounts.spotify.com/authorize';
 
