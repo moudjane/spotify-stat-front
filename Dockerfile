@@ -1,11 +1,19 @@
-FROM node:18 AS build
+FROM node:18-alpine AS build
+
 WORKDIR /app
-COPY package.json package-lock.json ./
+
+COPY package*.json ./
+
 RUN npm install
+
 COPY . .
+
 RUN npm run build --prod
 
-FROM nginx:alpine
-COPY --from=build /app/dist/spotify-stat-front /usr/share/nginx/html
+FROM caddy:2-alpine
+
+COPY --from=build /app/dist/spotify-stat-front /usr/share/caddy
+
 EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+
+CMD ["caddy", "file-server", "--root", "/usr/share/caddy"]
