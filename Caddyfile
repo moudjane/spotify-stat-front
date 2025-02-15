@@ -1,8 +1,0 @@
-*:80 {
-    root * /usr/share/caddy
-    file_server
-    try_files {path} /index.html
-
-    @removeSlash path_regexp ^(.+)/$
-    rewrite @removeSlash {http.matchers.removeSlash.1}
-}
