@@ -1,5 +1,11 @@
-:80 {
+*:80 {
     root * /usr/share/caddy
     file_server
     try_files {path} /index.html /
+    
+    @notStatic {
+        not path /index.html /assets/*
+    }
+    
+    rewrite @notStatic /index.html
 }
