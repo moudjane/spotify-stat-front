@@ -6,7 +6,7 @@ COPY . .
 RUN npm run build --prod
 
 FROM nginx:alpine
-COPY --from=build /app/dist/spotify-stat-front /usr/share/nginx/html
+COPY --from=build /app/dist/spotify-stat-front/browser /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/nginx.conf
 
 EXPOSE 80
